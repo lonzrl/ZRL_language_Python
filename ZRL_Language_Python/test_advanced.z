@@ -1,0 +1,292 @@
+# ZRL 高级功能测试
+
+print("=== ZRL 高级功能测试 ===")
+print()
+
+# 1. JSON处理测试
+print("1. JSON处理:")
+var data = {"name": "张三", "age": 25, "city": "北京"}
+var json_str = json_dumps(data)
+print("  序列化:", json_str)
+
+var parsed = json_loads(json_str)
+print("  反序列化:", parsed)
+print("  姓名:", get_dict(parsed, "name"))
+print()
+
+# 2. Base64编码测试
+print("2. Base64编码:")
+var text = "Hello ZRL!"
+var encoded = base64_encode(text)
+print("  编码:", encoded)
+
+var decoded = base64_decode(encoded)
+print("  解码:", decoded)
+
+var chinese = "你好世界"
+var chinese_encoded = base64_encode(chinese)
+var chinese_decoded = base64_decode(chinese_encoded)
+print("  中文测试:", chinese_decoded)
+print()
+
+# 3. 列表高级操作测试
+print("3. 列表高级操作:")
+var numbers = list([5, 2, 8, 1, 9, 1, 2])
+print("  原始列表:", numbers)
+print("  排序:", sorted(numbers))
+print("  包含8:", contains(numbers, 8))
+print("  8的位置:", index(numbers, 8))
+print("  1的个数:", count(numbers, 1))
+print("  切片[1:4]:", slice(numbers, 1, 4))
+print()
+
+# 4. 字典高级操作测试
+print("4. 字典高级操作:")
+var person = {"name": "李四", "age": 30, "city": "上海"}
+print("  字典:", person)
+print("  所有键:", keys(person))
+print("  所有值:", values(person))
+print("  姓名:", get_dict(person, "name"))
+print("  键的数量:", len(keys(person)))
+print()
+
+# 5. zip和enumerate测试
+print("5. zip和enumerate:")
+var names = list(["张三", "李四", "王五"])
+var scores = list([85, 92, 78])
+print("  姓名和分数:", zip(names, scores))
+print("  带索引的列表:", enumerate(names))
+print()
+
+# 6. 文件操作测试
+print("6. 文件操作:")
+import os
+
+# 写入文件
+os.write_file("test_zrl.txt", "Hello ZRL!\n这是一个测试文件。")
+print("  写入文件: test_zrl.txt")
+
+# 读取文件
+var content = os.read_file("test_zrl.txt")
+print("  文件内容:", content)
+
+# 追加文件
+os.append_file("test_zrl.txt", "\n追加的内容")
+print("  追加内容到文件")
+
+# 再次读取
+content = os.read_file("test_zrl.txt")
+print("  更新后的内容:", content)
+
+# 检查文件
+print("  文件存在:", os.path_exists("test_zrl.txt"))
+print("  是文件:", os.is_file("test_zrl.txt"))
+print("  文件大小:", os.get_size("test_zrl.txt"))
+
+# 列出目录
+var files = os.list_dir(".")
+print("  当前目录文件数:", len(files))
+
+# 删除测试文件
+os.remove_file("test_zrl.txt")
+print("  删除测试文件")
+print()
+
+# 7. 异常处理测试
+print("7. 异常处理:")
+try:
+    var result = 10 / 0
+except:
+    print("  捕获到除零错误")
+
+try:
+    var d = {"a": 1}
+    var value = d["nonexistent"]
+except:
+    print("  捕获到键不存在的错误")
+
+try:
+    print("  执行正常操作")
+except:
+    print("  不会执行到这里")
+else:
+    print("  没有异常，执行else块")
+print()
+
+# 8. 递归函数测试
+print("8. 递归函数:")
+func factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+func fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+print("  5! =", factorial(5))
+print("  fibonacci(10) =", fibonacci(10))
+print()
+
+# 注意：ZRL目前不支持 ** 幂运算符
+# 如需幂运算，请使用 pow() 函数
+
+# 9. 类继承测试
+print("9. 类继承:")
+class Animal:
+    func init(name):
+        self.name = name
+    
+    func speak():
+        print("  ", self.name, "发出声音")
+
+class Dog(Animal):
+    func init(name):
+        self.name = name
+    
+    func speak():
+        print("  ", self.name, "汪汪叫")
+
+class Cat(Animal):
+    func init(name):
+        self.name = name
+    
+    func speak():
+        print("  ", self.name, "喵喵叫")
+
+var dog = Dog("旺财")
+var cat = Cat("小白")
+
+dog.speak()
+cat.speak()
+print()
+
+# 10. 静态方法测试
+print("10. 多返回值函数:")
+func get_stats(numbers):
+    var total = sum(numbers)
+    var avg = total / len(numbers)
+    var max_val = max(numbers)
+    var min_val = min(numbers)
+    return list([total, avg, max_val, min_val])
+
+var stats = get_stats(list([1, 2, 3, 4, 5]))
+print("  列表 [1,2,3,4,5] 的统计:")
+print("    总和:", get_item(stats, 0))
+print("    平均:", get_item(stats, 1))
+print("    最大:", get_item(stats, 2))
+print("    最小:", get_item(stats, 3))
+print()
+
+# 11. 字符串高级操作测试
+print("11. 字符串高级操作:")
+var text = "Hello World ZRL"
+print("  原始字符串:", text)
+print("  替换 'World' 为 'China':", replace(text, "World", "China"))
+print("  分割空格:", split(text, " "))
+print("  去除空格后:", strip("  Hello  "))
+print("  包含 'ZRL':", contains(text, "ZRL"))
+print()
+
+# 12. 时间函数测试
+print("12. 时间函数:")
+print("  当前时间戳:", time())
+print()
+
+# 13. 随机数测试
+print("13. 随机数:")
+print("  随机整数 (0-9):", random_int(0, 9))
+print("  随机浮点数 (0-1):", random_float())
+print()
+
+# 14. 列表推导式模拟测试
+print("14. 列表操作:")
+var nums = list([1, 2, 3, 4, 5])
+var squared = list()
+for n in nums:
+    append(squared, n ** 2)
+print("  原始:", nums)
+print("  平方:", squared)
+
+var filtered = list()
+for n in nums:
+    if n % 2 == 0:
+        append(filtered, n)
+print("  偶数:", filtered)
+print()
+
+# 15. 字典操作测试
+print("15. 字典操作:")
+var scores = dict()
+set_dict(scores, "张三", 85)
+set_dict(scores, "李四", 92)
+set_dict(scores, "王五", 78)
+print("  成绩字典:", scores)
+print("  张三的成绩:", get_dict(scores, "张三"))
+print("  是否包含李四:", contains(keys(scores), "李四"))
+print()
+
+# 16. 模块导入测试
+print("16. 模块导入:")
+import os
+print("  当前目录:", os.current_dir())
+print("  Python版本:", sys.version)
+print()
+
+# 17. 复杂条件测试
+print("17. 复杂条件:")
+var age = 25
+var has_license = true
+var has_car = false
+
+if age >= 18 and has_license:
+    if has_car:
+        print("  可以开车")
+    else:
+        print("  有驾照但没有车")
+else:
+    print("  不能开车")
+print()
+
+# 18. 嵌套循环测试
+print("18. 嵌套循环:")
+print("  乘法表 (3x3):")
+for i in range(1, 4):
+    var row = ""
+    for j in range(1, 4):
+        row = row + str(i * j) + " "
+    print("  ", row)
+print()
+
+# 19. 函数作为参数测试
+print("19. 函数操作:")
+func apply_func(fn, x, y):
+    return fn(x, y)
+
+func add(a, b):
+    return a + b
+
+func multiply(a, b):
+    return a * b
+
+print("  add(5, 3) =", add(5, 3))
+print("  multiply(4, 3) =", multiply(4, 3))
+print()
+
+# 20. 综合测试
+print("20. 综合测试:")
+func process_data(data):
+    var result = list()
+    for item in data:
+        if item > 0:
+            append(result, item * 2)
+    return result
+
+var input_data = list([-1, 2, -3, 4, 5])
+var output_data = process_data(input_data)
+print("  输入:", input_data)
+print("  处理后 (正值x2):", output_data)
+print()
+
+print("=== 所有高级功能测试完成 ===")

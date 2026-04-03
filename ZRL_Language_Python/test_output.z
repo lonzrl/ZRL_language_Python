@@ -1,0 +1,45 @@
+# 测试ZRL Terminal输出显示
+
+print("=== ZRL Terminal 输出测试 ===")
+print("")
+
+print("1. 基本输出测试")
+print("Hello, World!")
+print("")
+
+print("2. 中文输出测试")
+print("你好，世界！")
+print("欢迎使用ZRL Terminal")
+print("")
+
+print("3. 数字输出测试")
+var x = 42
+print("x =", x)
+print("")
+
+print("4. 字符串拼接测试")
+var name = "张三"
+var age = 25
+print("姓名：" + name + "，年龄：" + str(age))
+print("")
+
+print("5. 列表输出测试")
+var numbers = list([1, 2, 3, 4, 5])
+print("列表：", numbers)
+print("")
+
+print("6. 循环输出测试")
+print("计数：")
+for i in range(5):
+    print("  i =", i)
+print("")
+
+print("7. 函数调用测试")
+func add(a, b):
+    return a + b
+
+var result = add(10, 20)
+print("10 + 20 =", result)
+print("")
+
+print("=== 测试完成 ===")

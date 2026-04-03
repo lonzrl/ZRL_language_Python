@@ -1,0 +1,9 @@
+var a = 10
+var b = 3
+
+print("Test without division")
+print("a + b = " + str(a + b))
+print("a - b = " + str(a - b))
+print("a * b = " + str(a * b))
+print("a % b = " + str(a % b))
+print("a ** 2 = " + str(a ** 2))

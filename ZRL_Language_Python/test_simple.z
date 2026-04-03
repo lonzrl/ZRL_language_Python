@@ -1,0 +1,23 @@
+# 简单测试
+print("Hello ZRL!")
+
+# 变量测试
+var x = 10
+print("x =", x)
+
+# 运算测试
+var a = 5
+var b = 3
+print("a + b =", a + b)
+
+# 列表测试
+var nums = list([1, 2, 3])
+print("nums =", nums)
+
+# 函数测试
+func add(a, b):
+    return a + b
+
+print("add(5, 3) =", add(5, 3))
+
+print("测试完成!")

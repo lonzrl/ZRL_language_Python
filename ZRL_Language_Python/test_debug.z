@@ -1,0 +1,54 @@
+# 调试测试
+print("Test 1: Basic print")
+
+# Test variables
+var name = "ZRL"
+print("Test 2: Variable")
+print(name)
+
+# Test arithmetic
+var a = 10
+var b = 3
+print("Test 3: Addition")
+print(a + b)
+
+# Test comparison
+print("Test 4: Comparison")
+print(a == b)
+
+# Test if statement
+print("Test 5: If statement")
+if a > b:
+    print("a is greater")
+
+# Test for loop
+print("Test 6: For loop")
+for i in range(3):
+    print(i)
+
+# Test function
+print("Test 7: Function")
+func test_func():
+    print("Inside function")
+
+test_func()
+
+# Test class
+print("Test 8: Class")
+class TestClass:
+    func init():
+        print("Class created")
+
+var obj = TestClass()
+
+# Test list
+print("Test 9: List")
+var lst = list([1, 2, 3])
+print(lst)
+
+# Test dict
+print("Test 10: Dict")
+var d = {"a": 1}
+print(d)
+
+print("All tests completed!")

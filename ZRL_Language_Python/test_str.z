@@ -1,0 +1,12 @@
+# 测试str函数
+var a = 10
+var b = 3
+
+print("Simple addition:")
+print(a + b)
+
+print("With str:")
+print(str(a + b))
+
+print("String concatenation:")
+print("Result: " + str(a + b))

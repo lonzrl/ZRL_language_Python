@@ -1,0 +1,15 @@
+# 测试类功能
+print("测试类功能:")
+
+class Animal:
+    func init(name):
+        print("  Animal init, name:", name)
+        self.name = name
+        print("  self.name set to:", self.name)
+    
+    func speak():
+        print("  ", self.name, "发出声音")
+
+var dog = Animal("旺财")
+print("  dog created")
+dog.speak()

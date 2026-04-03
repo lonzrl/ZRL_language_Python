@@ -1,0 +1,189 @@
+# ZRL 基础语法测试 v2
+
+print("=== ZRL 基础语法测试 ===")
+print()
+
+# 1. 变量声明测试
+print("1. 变量声明:")
+var name = "张三"
+var age = 25
+var height = 1.75
+var is_student = true
+
+print("  姓名: " + name)
+print("  年龄: " + str(age))
+print("  身高: " + str(height))
+print("  是学生: " + str(is_student))
+print()
+
+# 2. 常量声明测试
+print("2. 常量声明:")
+const PI = 3.14159
+const MAX_SIZE = 100
+print("  PI: " + str(PI))
+print("  MAX_SIZE: " + str(MAX_SIZE))
+print()
+
+# 3. 算术运算测试
+print("3. 算术运算:")
+var a = 10
+var b = 3
+print("  a = " + str(a) + ", b = " + str(b))
+
+var result1 = a + b
+print("  a + b = " + str(result1))
+
+var result2 = a - b
+print("  a - b = " + str(result2))
+
+var result3 = a * b
+print("  a * b = " + str(result3))
+
+var result4 = a / b
+print("  a / b = " + str(result4))
+
+var result5 = a % b
+print("  a % b = " + str(result5))
+
+var result6 = a ** 2
+print("  a ** 2 = " + str(result6))
+
+print()
+
+# 4. 比较运算测试
+print("4. 比较运算:")
+print("  a == b: " + str(a == b))
+print("  a != b: " + str(a != b))
+print("  a > b: " + str(a > b))
+print("  a < b: " + str(a < b))
+print("  a >= b: " + str(a >= b))
+print("  a <= b: " + str(a <= b))
+print()
+
+# 5. 逻辑运算测试
+print("5. 逻辑运算:")
+var x = true
+var y = false
+print("  x = true, y = false")
+print("  x and y: " + str(x and y))
+print("  x or y: " + str(x or y))
+print("  not x: " + str(not x))
+print()
+
+# 6. 条件语句测试
+print("6. 条件语句:")
+var score = 85
+print("  score = " + str(score))
+if score >= 90:
+    print("  等级: 优秀")
+elif score >= 80:
+    print("  等级: 良好")
+elif score >= 60:
+    print("  等级: 及格")
+else:
+    print("  等级: 不及格")
+print()
+
+# 7. for循环测试
+print("7. for循环:")
+print("  遍历 0-4:")
+for i in range(5):
+    print("  " + str(i))
+print()
+
+# 8. while循环测试
+print("8. while循环:")
+var count = 3
+print("  count = " + str(count))
+print("  倒计时:")
+while count > 0:
+    print("  " + str(count))
+    count = count - 1
+print("  发射!")
+print()
+
+# 9. 函数定义测试
+print("9. 函数定义:")
+func add(a, b):
+    return a + b
+
+func greet(name):
+    print("  你好, " + name + "!")
+
+var add_result = add(5, 3)
+print("  add(5, 3) = " + str(add_result))
+greet("ZRL用户")
+print()
+
+# 10. 列表操作测试
+print("10. 列表操作:")
+var numbers = list([5, 2, 8, 1, 9])
+print("  列表: " + str(numbers))
+print("  长度: " + str(len(numbers)))
+
+var sorted_numbers = sorted(numbers)
+print("  排序: " + str(sorted_numbers))
+
+print("  包含8: " + str(contains(numbers, 8)))
+print("  最大值: " + str(max(numbers)))
+print("  最小值: " + str(min(numbers)))
+print("  总和: " + str(sum(numbers)))
+print()
+
+# 11. 字典操作测试
+print("11. 字典操作:")
+var student = dict()
+set_dict(student, "name", "王五")
+set_dict(student, "age", 20)
+set_dict(student, "grade", "大二")
+print("  字典: " + str(student))
+print("  姓名: " + get_dict(student, "name"))
+print()
+
+# 12. 字符串操作测试
+print("12. 字符串操作:")
+var text = "Hello ZRL"
+print("  字符串: " + text)
+print("  长度: " + str(len(text)))
+print("  转大写: " + upper(text))
+print("  转小写: " + lower(text))
+print()
+
+# 13. 类型检查测试
+print("13. 类型检查:")
+print("  'hello' 是字符串: " + str(is_string("hello")))
+print("  42 是数字: " + str(is_number(42)))
+print("  [1,2,3] 是列表: " + str(is_list(list([1, 2, 3]))))
+print("  {'a':1} 是字典: " + str(is_dict(dict())))
+print("  true 是布尔: " + str(is_bool(true)))
+print("  null 是空值: " + str(is_null(null)))
+print()
+
+# 14. 数学函数测试
+print("14. 数学函数:")
+print("  sqrt(16) = " + str(sqrt(16)))
+print("  pow(2, 10) = " + str(pow(2, 10)))
+print("  abs(-5) = " + str(abs(-5)))
+print("  round(3.7) = " + str(round(3.7)))
+print()
+
+# 15. 类型转换测试
+print("15. 类型转换:")
+print("  str(123) = " + str(123))
+var int_val = int('456')
+print("  int('456') = " + str(int_val))
+var float_val = float('3.14')
+print("  float('3.14') = " + str(float_val))
+print()
+
+# 16. 进制转换测试
+print("16. 进制转换:")
+print("  255 的十六进制: " + hex(255))
+print("  64 的八进制: " + oct(64))
+print("  16 的二进制: " + bin(16))
+print("  chr(65) = " + chr(65))
+var ord_val = ord('A')
+print("  ord('A') = " + str(ord_val))
+print()
+
+print("=== 所有基础语法测试完成 ===")

@@ -1,0 +1,29 @@
+# 测试继承功能（修复版）
+print("测试继承功能:")
+
+class Animal:
+    func init(name):
+        self.name = name
+    
+    func speak():
+        print("  ", self.name, "发出声音")
+
+class Dog(Animal):
+    func init(name):
+        self.name = name
+    
+    func speak():
+        print("  ", self.name, "汪汪叫")
+
+class Cat(Animal):
+    func init(name):
+        self.name = name
+    
+    func speak():
+        print("  ", self.name, "喵喵叫")
+
+var dog = Dog("旺财")
+var cat = Cat("小白")
+
+dog.speak()
+cat.speak()

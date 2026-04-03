@@ -1,0 +1,18 @@
+var a = 10
+var b = 3
+
+print("Test 1")
+print("a + b = " + str(a + b))
+print("a - b = " + str(a - b))
+print("a * b = " + str(a * b))
+print("a / b = " + str(a / b))
+print("a % b = " + str(a % b))
+print("a ** 2 = " + str(a ** 2))
+
+print("Test 2")
+print("a == b: " + str(a == b))
+print("a != b: " + str(a != b))
+print("a > b: " + str(a > b))
+print("a < b: " + str(a < b))
+print("a >= b: " + str(a >= b))
+print("a <= b: " + str(a <= b))
